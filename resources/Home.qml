@@ -152,6 +152,7 @@ Item{
                             id: playButton
                             anchors.fill: parent
                             onClicked: {
+                                player.setHomePlaylistAndPlay(index);
                                 if (player.currentSongUrl === model.fileUrl) {
                                     player.playPause()
                                 } else {
@@ -159,6 +160,7 @@ Item{
                                     player.playPause()
                                 }
                                 played = !played
+
                                 playPauseImg.source = played ? "qrc:/resources/images/pause_dark2.png" : "qrc:/resources/images/play_dark2.png"
                             }
                             onPressed: playPauseImg.opacity = 0.7

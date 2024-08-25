@@ -363,6 +363,30 @@ Item {
                 border.width: 2
             }
 
+            Image {
+                id: playPlaylist
+                height: 45
+                width: 45
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                    margins: 10
+                }
+                fillMode: Image.PreserveAspectFit
+                source: "qrc:/resources/images/play_dark2.png"
+
+                MouseArea {
+                    id: playPlaylistButton
+                    anchors.fill: parent
+                    onClicked: {
+                        player.playPlaylist(playlists_s.selectedPlaylist);
+                    }
+                    onPressed: playPlaylist.opacity = 0.7
+                    onReleased: playPlaylist.opacity = 1.0
+                    onCanceled: playPlaylist.opacity = 1.0
+                }
+            }
+
             Image{
                 id: addSong
                 width: 45

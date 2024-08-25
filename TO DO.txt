@@ -15,3 +15,5 @@
 - to change the color of scrollbar
 - music queue
 - shuffling music
+- changes are not refreshed instantly
+- when app opened, playing next song doesn't work

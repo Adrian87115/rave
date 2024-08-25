@@ -61,6 +61,7 @@ class Songs: public QObject{
 
         Q_INVOKABLE QString getSongTitleByUrl(const QUrl &songUrl) const;
         Q_INVOKABLE QString getSongAuthorByUrl(const QUrl &songUrl) const;
+        friend class Player;
 
     signals:
         void songListChanged();

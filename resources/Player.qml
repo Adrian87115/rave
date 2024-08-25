@@ -207,7 +207,7 @@ Item{
             }
         }
 
-        Image{
+        Image{//playing previos doesnt work, also play button state is desynchronised when playing next, it hsould always go to play, when next or prev presse
             id: prev
             width: 35
             height: 35
@@ -228,6 +228,10 @@ Item{
                 onPressed: prev.opacity = 0.7
                 onReleased: prev.opacity = 1.0
                 onCanceled: prev.opacity = 1.0
+                onClicked:{
+                    player.playPreviousSongInPlaylist();
+                    play.source = "qrc:/resources/images/pause_dark.png"
+                }
             }
         }
 
@@ -247,6 +251,10 @@ Item{
                 onPressed: next.opacity = 0.7
                 onReleased: next.opacity = 1.0
                 onCanceled: next.opacity = 1.0
+                onClicked:{
+                    player.playNextSongInPlaylist();
+                    play.source = "qrc:/resources/images/pause_dark.png"
+                }
             }
         }
 
